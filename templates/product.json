@@ -157,6 +157,9 @@
         "template--21024093471007__60b40108-1623-4118-8b09-ecb8c50bf462-text-1",
         "template--21024093471007__60b40108-1623-4118-8b09-ecb8c50bf462-button-1"
       ],
+      "custom_css": [
+        ".rich-text__blocks {max-width: 100%;}"
+      ],
       "settings": {
         "desktop_content_position": "left",
         "content_alignment": "left",
