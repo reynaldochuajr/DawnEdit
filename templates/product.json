@@ -233,7 +233,7 @@
         "template--21024093471007__60b40108-1623-4118-8b09-ecb8c50bf462-text-1": {
           "type": "text",
           "settings": {
-            "text": ""
+            "text": "<p>{{ product.metafields.custom.long_description | metafield_tag }}<\/p>"
           }
         },
         "template--21024093471007__60b40108-1623-4118-8b09-ecb8c50bf462-button-1": {
