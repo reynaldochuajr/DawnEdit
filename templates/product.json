@@ -45,9 +45,11 @@
             "show_gift_card_recipient": true
           }
         },
-        "description": {
-          "type": "description",
+        "1d21369d-c27d-4090-8127-9385779ecade": {
+          "type": "text",
           "settings": {
+            "text": "Text block",
+            "text_style": "body"
           }
         },
         "collapsible-row-0": {
@@ -101,7 +103,7 @@
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
-        "description",
+        "1d21369d-c27d-4090-8127-9385779ecade",
         "collapsible-row-0",
         "collapsible-row-1",
         "collapsible-row-2",
@@ -121,6 +123,48 @@
         "enable_video_looping": false,
         "padding_top": 36,
         "padding_bottom": 12
+      }
+    },
+    "60b40108-1623-4118-8b09-ecb8c50bf462": {
+      "type": "rich-text",
+      "blocks": {
+        "template--21024093471007__60b40108-1623-4118-8b09-ecb8c50bf462-heading-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "Product Description",
+            "heading_size": "h1"
+          }
+        },
+        "template--21024093471007__60b40108-1623-4118-8b09-ecb8c50bf462-text-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>{{ product.metafields.custom.long_description | metafield_tag }}<\/p>"
+          }
+        },
+        "template--21024093471007__60b40108-1623-4118-8b09-ecb8c50bf462-button-1": {
+          "type": "button",
+          "settings": {
+            "button_label": "",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "template--21024093471007__60b40108-1623-4118-8b09-ecb8c50bf462-heading-1",
+        "template--21024093471007__60b40108-1623-4118-8b09-ecb8c50bf462-text-1",
+        "template--21024093471007__60b40108-1623-4118-8b09-ecb8c50bf462-button-1"
+      ],
+      "settings": {
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
       }
     },
     "image-with-text": {
@@ -219,55 +263,13 @@
         "padding_top": 36,
         "padding_bottom": 28
       }
-    },
-    "60b40108-1623-4118-8b09-ecb8c50bf462": {
-      "type": "rich-text",
-      "blocks": {
-        "template--21024093471007__60b40108-1623-4118-8b09-ecb8c50bf462-heading-1": {
-          "type": "heading",
-          "settings": {
-            "heading": "Product Description",
-            "heading_size": "h1"
-          }
-        },
-        "template--21024093471007__60b40108-1623-4118-8b09-ecb8c50bf462-text-1": {
-          "type": "text",
-          "settings": {
-            "text": "<p>{{ product.metafields.custom.long_description | metafield_tag }}<\/p>"
-          }
-        },
-        "template--21024093471007__60b40108-1623-4118-8b09-ecb8c50bf462-button-1": {
-          "type": "button",
-          "settings": {
-            "button_label": "Button label",
-            "button_link": "",
-            "button_style_secondary": false,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
-          }
-        }
-      },
-      "block_order": [
-        "template--21024093471007__60b40108-1623-4118-8b09-ecb8c50bf462-heading-1",
-        "template--21024093471007__60b40108-1623-4118-8b09-ecb8c50bf462-text-1",
-        "template--21024093471007__60b40108-1623-4118-8b09-ecb8c50bf462-button-1"
-      ],
-      "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
-        "color_scheme": "",
-        "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 52
-      }
     }
   },
   "order": [
     "main",
+    "60b40108-1623-4118-8b09-ecb8c50bf462",
     "image-with-text",
     "multicolumn",
-    "related-products",
-    "60b40108-1623-4118-8b09-ecb8c50bf462"
+    "related-products"
   ]
 }
