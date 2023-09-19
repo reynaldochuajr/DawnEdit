@@ -45,11 +45,9 @@
             "show_gift_card_recipient": true
           }
         },
-        "1d21369d-c27d-4090-8127-9385779ecade": {
-          "type": "text",
+        "a43cd8a3-2823-4961-a2a9-fb120ed1fc03": {
+          "type": "description",
           "settings": {
-            "text": "Text block",
-            "text_style": "body"
           }
         },
         "collapsible-row-0": {
@@ -103,7 +101,7 @@
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
-        "1d21369d-c27d-4090-8127-9385779ecade",
+        "a43cd8a3-2823-4961-a2a9-fb120ed1fc03",
         "collapsible-row-0",
         "collapsible-row-1",
         "collapsible-row-2",
