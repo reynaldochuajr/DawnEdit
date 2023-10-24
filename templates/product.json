@@ -92,11 +92,18 @@
           "settings": {
             "share_label": "Share"
           }
+        },
+        "zegsu-alireview-title": {
+          "type": "shopify:\/\/apps\/alireviews-ali-reviews-app\/blocks\/product-title-app-block\/ed1f8756-3ef0-4b52-b2bc-4add334ee46d",
+          "settings": {
+            "product_id": ""
+          }
         }
       },
       "block_order": [
         "vendor",
         "title",
+        "zegsu-alireview-title",
         "caption",
         "price",
         "variant_picker",
@@ -265,6 +272,23 @@
         "padding_top": 36,
         "padding_bottom": 28
       }
+    },
+    "zegsu-alireviews": {
+      "type": "apps",
+      "blocks": {
+        "dc9a3606-e208-4377-af70-764eaea240ee": {
+          "type": "shopify:\/\/apps\/alireviews-ali-reviews-app\/blocks\/product-app-block\/ed1f8756-3ef0-4b52-b2bc-4add334ee46d",
+          "settings": {
+            "product_id": ""
+          }
+        }
+      },
+      "block_order": [
+        "dc9a3606-e208-4377-af70-764eaea240ee"
+      ],
+      "settings": {
+        "include_margins": true
+      }
     }
   },
   "order": [
@@ -272,6 +296,7 @@
     "60b40108-1623-4118-8b09-ecb8c50bf462",
     "image-with-text",
     "multicolumn",
-    "related-products"
+    "related-products",
+    "zegsu-alireviews"
   ]
 }
