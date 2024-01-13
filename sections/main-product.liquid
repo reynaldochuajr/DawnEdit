@@ -65,7 +65,10 @@
 
   {% if settings.show_product_navigation %}
 
-   <div class="product-navigation">
+   
+
+  <div class="product product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
+    <div class="product-navigation">
       {% if collection.previous_product %}
         <a class="button previous" href="{{ collection.previous_product }}">{{ settings.product_navigation_previous_text | escape }}</a>
       {% endif %}
@@ -75,8 +78,6 @@
     </div>
   
   {% endif %}
-
-  <div class="product product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
     <div class="grid__item product__media-wrapper{% if section.settings.media_position == 'right' %} medium-hide large-up-hide{% endif %}">
       {% render 'product-media-gallery', variant_images: variant_images %}
     </div>
@@ -707,40 +708,6 @@
   "name": "t:sections.main-product.name",
   "tag": "section",
   "class": "section",
-  "settings": [
-    {
-      "type": "header",
-      "content": "Navigation"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_product_navigation",
-      "label": "Show product navigation",
-      "default": true
-    },
-    {
-      "type": "text",
-      "id": "product_navigation_previous_text",
-      "label": "Previous button label",
-      "default": "Previous"
-    },
-    {
-      "type": "text",
-      "id": "product_navigation_next_text",
-      "label": "Next button label",
-      "default": "Next"
-    },
-    {
-      "type": "range",
-      "id": "product_navigation_padding_bottom",
-      "default": 50,
-      "label": "Bottom padding",
-      "min": 0,
-      "max": 100,
-      "step": 1,
-      "unit": "px"
-    }
-  ],
   "blocks": [
     {
       "type": "@app"
