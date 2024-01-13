@@ -76,14 +76,41 @@
 
   
 
-  <div class="product-navigation">
+  {%- liquid
+assign previous_product = collection.previous_product
+assign next_product = collection.next_product
+if previous_product or next_product
+else
+assign collectionList = product.collections[0].handle
+assign previous_product = nil
+assign next_product = nil
+assign last = collections[collectionList].products_count
+for p in collections[collectionList].products
+if p.handle == product.handle
+assign prev = forloop.index | minus: 2
+assign next = forloop.index
+if prev >= 0
+assign previous_product = collections[collectionList].products[prev].handle
+endif
+if last >= next
+assign next_product = collections[collectionList].products[next].handle
+endif
+break
+endif
+endfor
+endif
+-%}
 
-      <a class="button previous" href="{{ collection.previous_product }}">{{ section.settings.product_navigation_previous_text | escape }}</a>
-
- 
-      <a class="button next" href="{{ collection.next_product }}">{{ section.settings.product_navigation_next_text | escape }}</a>
- 
-  </div>
+  <div id="nextpre">
+{%- if previous_product -%}
+<a class="next-prev-icon prev-icon" href="{{ previous_product }}">
+</a>
+{%- endif -%}
+{%- if next_product -%}
+<a class="next-prev-icon next-icon" href="{{ next_product }}">
+</a>
+{%- endif -%}
+</div>
 
 {% endif %}
   
