@@ -421,6 +421,12 @@
               %}
 
             {%- when 'variant_picker' -%}
+              {%- if product.type == "T-shirt" %}
+               <div class="field">
+                 <input class="field__input" id="your-name" type="text" name="properties[Your name]" form="{{ product_form_id }}" placeholder="Your name">
+                 <label class="field__label">Your name</label>
+               </div>
+              {%- endif -%}
               {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
             {%- when 'buy_buttons' -%}
               {%- render 'buy-buttons', block: block, product: product, product_form_id: product_form_id, section_id: section.id, show_pickup_availability: true -%}
