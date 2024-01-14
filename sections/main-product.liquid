@@ -63,76 +63,6 @@
 
   {% assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' %}
 
-  {% style %}  
-    .product-navigation {
-      display: flex;
-      justify-content: {% if collection.previous_product %}space-between{% else %}flex-end{% endif %};
-      width: 100%;
-      padding-bottom: {{ section.settings.product_navigation_padding_bottom }}px;
-    }
-    #nextpre{
-display: flex;
-justify-content: flex-end;
-margin-right: 6%;
-}
-.next-prev-icon{
-margin: 0 0 20px 20px;
-padding: 5px 10px;
-font-weight: 500;
-color: #fff;
-box-shadow: #0003 0 20px 30px;
-background-color: #000;
-border-radius: 10px;
-text-decoration: unset;
-width: 100px;
-text-align: center;
-font-size: 15px;
-}
-  {% endstyle %}
-
-  {% if section.settings.show_product_navigation %}
-
-  
-
-  {%- liquid
-assign previous_product = collection.previous_product
-assign next_product = collection.next_product
-if previous_product or next_product
-else
-assign collectionList = product.collections[0].handle
-assign previous_product = nil
-assign next_product = nil
-assign last = collections[collectionList].products_count
-for p in collections[collectionList].products
-if p.handle == product.handle
-assign prev = forloop.index | minus: 2
-assign next = forloop.index
-if prev >= 0
-assign previous_product = collections[collectionList].products[prev].handle
-endif
-if last >= next
-assign next_product = collections[collectionList].products[next].handle
-endif
-break
-endif
-endfor
-endif
--%}
-
-  <div id="nextpre">
-{%- if previous_product -%}
-<a class="next-prev-icon prev-icon" href="{{ previous_product }}">
-</a>
-{%- endif -%}
-{%- if next_product -%}
-<a class="next-prev-icon next-icon" href="{{ next_product }}">
-</a>
-{%- endif -%}
-</div>
-
-{% endif %}
-  
-
   <div class="product product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
     <div class="grid__item product__media-wrapper{% if section.settings.media_position == 'right' %} medium-hide large-up-hide{% endif %}">
       {% render 'product-media-gallery', variant_images: variant_images %}
@@ -491,12 +421,6 @@ endif
               %}
 
             {%- when 'variant_picker' -%}
-              {%- if product.type == "T-Shirt" %}
-               <div class="field">
-                 <input class="field__input" id="your-name" type="text" name="properties[Your name]" form="{{ product_form_id }}" placeholder="Your name">
-                 <label class="field__label">Your name</label>
-               </div>
-              {%- endif -%}
               {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
             {%- when 'buy_buttons' -%}
               {%- render 'buy-buttons', block: block, product: product, product_form_id: product_form_id, section_id: section.id, show_pickup_availability: true -%}
@@ -759,7 +683,6 @@ endif
 </section>
 
 {% schema %}
-
 {
   "name": "t:sections.main-product.name",
   "tag": "section",
@@ -2091,38 +2014,6 @@ endif
     }
   ],
   "settings": [
-    {
-      "type": "header",
-      "content": "Navigation"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_product_navigation",
-      "label": "Show product navigation",
-      "default": true
-    },
-    {
-      "type": "text",
-      "id": "product_navigation_previous_text",
-      "label": "Previous button label",
-      "default": "Previous"
-    },
-    {
-      "type": "text",
-      "id": "product_navigation_next_text",
-      "label": "Next button label",
-      "default": "Next"
-    },
-    {
-      "type": "range",
-      "id": "product_navigation_padding_bottom",
-      "default": 50,
-      "label": "Bottom padding",
-      "min": 0,
-      "max": 100,
-      "step": 1,
-      "unit": "px"
-    },
     {
       "type": "checkbox",
       "id": "enable_sticky_info",
